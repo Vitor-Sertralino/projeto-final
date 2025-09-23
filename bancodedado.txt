@@ -1,0 +1,77 @@
+-- 1. Criar o banco de dados
+CREATE DATABASE IF NOT EXISTS biblioteca;
+USE biblioteca;
+
+-- 2. Tabela de autores
+CREATE TABLE autores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    data_nascimento DATE,
+    nacionalidade VARCHAR(50)
+);
+
+-- 3. Tabela de classificações (ex: Ficção, Romance, Técnico, etc.)
+CREATE TABLE classificacoes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(50) NOT NULL,
+    descricao TEXT
+);
+
+-- 4. Tabela de livros
+CREATE TABLE livros (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(150) NOT NULL,
+    ano_publicacao YEAR,
+    id_autor INT,
+    id_classificacao INT,
+    FOREIGN KEY (id_autor) REFERENCES autores(id),
+    FOREIGN KEY (id_classificacao) REFERENCES classificacoes(id)
+);
+
+-- Inserindo autores
+INSERT INTO autores (nome, data_nascimento, nacionalidade)
+VALUES 
+('Jorge Amado', '10-12-1912', 'Brasileiro'),
+('Clarice Lispector', '10-12-1920', 'Brasileira');
+
+alter table autores
+drop column data_nascimento;
+
+alter table autores
+add column criado_em timestamp not null default current_timestamp;
+
+drop table autores;
+
+-- Inserindo classificações
+INSERT INTO classificacoes (nome, descricao)
+VALUES 
+('Romance', 'Obras de ficção com foco em relações interpessoais'),
+('Crônica', 'Texto curto sobre temas do cotidiano');
+
+alter table classificacoes
+add column criado_em timestamp not null default current_timestamp;
+
+-- Inserindo livros
+INSERT INTO livros (titulo, ano_publicacao, id_autor, id_classificacao)
+VALUES 
+('Capitães da Areia', 1937, 1, 1),
+('A Hora da Estrela', 1977, 2, 2);
+
+alter table livros
+add column criado_em timestamp not null default current_timestamp;
+
+select * from usuarios;
+
+create table if not exists usuarios (
+	id bigint unsigned auto_increment primary key,
+    nome varchar(100) not null,
+    email varchar(120) not null unique,
+    senha_hash varchar(255) not null,
+    criado_em timestamp not null default current_timestamp
+) engine=InnoDB;
+
+drop table usuarios;
+
+select * from autores;
+
+select * from classificacoes;
