@@ -1,12 +1,18 @@
-// routes/livros.routes.js
-const express = require('express');
+import express from 'express';
+import {
+  getLivros,
+  getLivroById,
+  createLivro,
+  updateLivro,
+  deleteLivro
+} from '../controllers/livros.controller.js';
+
 const router = express.Router();
-const ctrl = require('../controllers/livros.controller');
 
-router.get('/', ctrl.getLivros);
-router.get('/:id', ctrl.getLivroById);
-router.post('/', ctrl.createLivro);
-router.put('/:id', ctrl.updateLivro);
-router.delete('/:id', ctrl.deleteLivro);
+router.get('/', getLivros);
+router.get('/:id', getLivroById);
+router.post('/', createLivro);
+router.put('/:id', updateLivro);
+router.delete('/:id', deleteLivro);
 
-module.exports = router;
+export default router;

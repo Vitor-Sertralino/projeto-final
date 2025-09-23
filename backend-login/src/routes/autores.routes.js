@@ -1,11 +1,18 @@
-const express = require('express');
+import express from 'express';
+import {
+  getAutores,
+  getAutorById,
+  createAutor,
+  updateAutor,
+  deleteAutor
+} from '../controllers/autores.controller.js';
+
 const router = express.Router();
-const autoresController = require('../controllers/autores.controller');
 
-router.get('/', autoresController.getAutores);
-router.get('/:id', autoresController.getAutorById);
-router.post('/', autoresController.createAutor);
-router.put('/:id', autoresController.updateAutor);
-router.delete('/:id', autoresController.deleteAutor);
+router.get('/', getAutores);
+router.get('/:id', getAutorById);
+router.post('/', createAutor);
+router.put('/:id', updateAutor);
+router.delete('/:id', deleteAutor);
 
-module.exports = router;
+export default router;

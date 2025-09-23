@@ -12,9 +12,9 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api", usuariosRoutes);
-app.use("/autores", autoresRoutes);
-app.use("/classificacoes", classificacoesRoutes);
-app.use("/livros", livrosRoutes);
+app.use("/api/autores", autoresRoutes);
+app.use("/api/classificacoes", classificacoesRoutes);
+app.use("/api/livros", livrosRoutes);
 
 app.get("/", (_req, res) => res.send("API ok"));
 

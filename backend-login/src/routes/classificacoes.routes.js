@@ -1,12 +1,18 @@
-// routes/classificacoes.routes.js
-const express = require('express');
+import express from 'express';
+import {
+  getClassificacoes,
+  getClassificacaoById,
+  createClassificacao,
+  updateClassificacao,
+  deleteClassificacao
+} from '../controllers/classificacoes.controller.js';
+
 const router = express.Router();
-const ctrl = require('../controllers/classificacoes.controller');
 
-router.get('/', ctrl.getClassificacoes);
-router.get('/:id', ctrl.getClassificacaoById);
-router.post('/', ctrl.createClassificacao);
-router.put('/:id', ctrl.updateClassificacao);
-router.delete('/:id', ctrl.deleteClassificacao);
+router.get('/', getClassificacoes);
+router.get('/:id', getClassificacaoById);
+router.post('/', createClassificacao);
+router.put('/:id', updateClassificacao);
+router.delete('/:id', deleteClassificacao);
 
-module.exports = router;
+export default router;
