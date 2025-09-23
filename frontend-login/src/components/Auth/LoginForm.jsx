@@ -6,8 +6,8 @@ import "./LoginForm.css";
 const API_LOGIN = "http://localhost:4000/api/login";
 
 export default function LoginForm() {
-  const { login } = useAuth()
-  const navigate = useNavigate()
+  const { login } = useAuth();
+  const navigate = useNavigate();
   const [form, setForm] = useState({ email: "", senha: "" });
   const [erro, setErro] = useState("");
 
@@ -18,23 +18,22 @@ export default function LoginForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    setErro("")
+    setErro("");
 
     const res = await fetch(API_LOGIN, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form)
-    })
+    });
 
     if (!res.ok) {
-      setErro("Falha no login.")
+      setErro("Falha no login.");
       return;
     }
 
-    const data = await res.json()
-    login(data)
-    navigate("/alunos", { replace: true })
-    // faça aqui a lógica de login    
+    const data = await res.json(); // { token, usuario }
+    login(data);
+    navigate("/autores", { replace: true }); // após login
   }
 
   return (

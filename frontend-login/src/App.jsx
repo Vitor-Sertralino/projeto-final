@@ -2,8 +2,9 @@ import { Routes, Route } from "react-router-dom";
 import ProtectRoute from "./auth/ProtectedRoute";
 import Login from "./pages/Login";
 import CadastroUsuario from "./pages/CadastroUsuario";
-import Alunos from "./pages/Alunos";
 import Layout from "./components/Layout/Layout";
+import Autores from "./pages/Autores";
+import Classificacoes from "./pages/Classificacoes";
 
 export default function App() {
   return (
@@ -13,7 +14,10 @@ export default function App() {
 
       <Route element={<ProtectRoute />}>
         <Route element={<Layout />}>
-          <Route path="/alunos" element={<Alunos />} />
+          <Route path="/autores" element={<Autores/>} />
+        </Route>
+        <Route element={<Layout />}>
+          <Route path="/classificacoes" element={<Classificacoes/>} />
         </Route>
       </Route>
 

@@ -17,15 +17,20 @@ export default function Layout() {
         <h1 className="brand">Admin</h1>
 
         <nav className="nav">
-          <NavLink to="/alunos" className={({ isActive }) => `link ${isActive ? "active" : ""}`}>
-            Alunos
+          <NavLink to="/autores" className={({ isActive }) => `link ${isActive ? "active" : ""}`}>
+            Autores
+          </NavLink>
+        </nav>
+        <nav className="nav">
+          <NavLink to="/classificacoes" className={({ isActive }) => `link ${isActive ? "active" : ""}`}>
+            Classificações
           </NavLink>
         </nav>
 
         {user ? (
           <>
             <span style={{ marginRight: 8 }}>Olá, {user.nome}</span>
-            <button className="btn-logout" onClick={{handleLogout}}>
+            <button className="btn-logout" onClick={handleLogout}>
               Sair
             </button>
           </>
