@@ -1,7 +1,7 @@
 /* Wrapper */
 .crud { max-width: 1000px; }
 .crud__title { margin: 0 0 6px 0; }
-.crud__subtitle { margin: 0 0 16px 0; color: #6b7280; }
+.crud__subtitle { margin: 0 0 16px 0; color: #8f7f7b; }
 
 /* Form */
 .crud__form { margin-bottom: 8px; }
@@ -20,14 +20,14 @@
 .select {
   width: 100%;
   padding: 10px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #eedcd8;
   border-radius: 6px;
   background: #fff;
   outline: none;
 }
 .input:focus, .select:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+  border-color: #c0996c;
+  box-shadow: 0 0 0 3px rgba(102, 35, 8, 0.15);
 }
 
 .actions { display: flex; gap: 8px; margin-top: 6px; }
@@ -43,8 +43,8 @@
   cursor: pointer;
 }
 .btn-primary {
-  border-color: #2563eb;
-  background: #2563eb;
+  border-color: #94573f;
+  background: #94573f;
   color: #fff;
 }
 .btn-ghost { background: #fff; }
@@ -52,5 +52,5 @@
 
 /* Table */
 .table { width: 100%; border-collapse: collapse; margin-top: 16px; }
-.th, .td { border-bottom: 1px solid #e5e7eb; padding: 12px; text-align: left; font-size: .95rem; }
+.th, .td { border-bottom: 1px solid #eedcd8; padding: 12px; text-align: left; font-size: .95rem; }
 .row-actions { display: flex; gap: 8px; }

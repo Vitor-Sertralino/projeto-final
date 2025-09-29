@@ -91,8 +91,8 @@ export default function CrudClassificacoes() {
 
   return (
     <div className="card crud">
-      <h2 className="crud__title">Gestão de Classificacõs</h2>
-      <p className="crud__subtitle">CRUD de Classificações consumindo banco de dados.</p>
+      <h2 className="crud__title">Gestão de Classificações</h2>
+      <p className="crud__subtitle">Manejo de Classificações consumindo banco de dados.</p>
 
       {/* FORMULÁRIO */}
       <form onSubmit={onSubmit} className="crud__form">
@@ -153,7 +153,7 @@ export default function CrudClassificacoes() {
                 <td className="td">
                   <div className="row-actions">
                     <button className="btn btn-small" onClick={() => iniciarEdicao(a)}>Editar</button>
-                    <button className="btn btn-small" onClick={() => removerAutor(a.id)}>Remover</button>
+                    <button className="btn btn-small" onClick={() => removerClassificacao(a.id)}>Remover</button>
                   </div>
                 </td>
               </tr>

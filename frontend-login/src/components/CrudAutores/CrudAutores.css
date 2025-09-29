@@ -1,7 +1,7 @@
 /* Wrapper */
 .crud { max-width: 1000px; }
 .crud__title { margin: 0 0 6px 0; }
-.crud__subtitle { margin: 0 0 16px 0; color: #6b7280; }
+.crud__subtitle { margin: 0 0 16px 0; color: #8f7f7b; }
 
 /* Form */
 .crud__form { margin-bottom: 8px; }
@@ -26,7 +26,7 @@
   outline: none;
 }
 .input:focus, .select:focus {
-  border-color: #2563eb;
+  border-color: #c0996c;
   box-shadow: 0 0 0 3px rgba(37,99,235,.15);
 }
 
@@ -43,8 +43,8 @@
   cursor: pointer;
 }
 .btn-primary {
-  border-color: #2563eb;
-  background: #2563eb;
+  border-color: #c0996c;
+  background: #c0996c;
   color: #fff;
 }
 .btn-ghost { background: #fff; }

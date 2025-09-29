@@ -46,6 +46,7 @@ export default function CrudAutores() {
       }),
     });
     const novo = await res.json();
+    console.log(novo)
     setLista((antiga) => [novo, ...antiga]);
     limparForm();
   }
@@ -92,7 +93,7 @@ export default function CrudAutores() {
   return (
     <div className="card crud">
       <h2 className="crud__title">Gestão de Autores</h2>
-      <p className="crud__subtitle">CRUD de Autores consumindo banco de dados.</p>
+      <p className="crud__subtitle">Manejo de Autores consumindo banco de dados.</p>
 
       {/* FORMULÁRIO */}
       <form onSubmit={onSubmit} className="crud__form">

@@ -5,6 +5,7 @@ import CadastroUsuario from "./pages/CadastroUsuario";
 import Layout from "./components/Layout/Layout";
 import Autores from "./pages/Autores";
 import Classificacoes from "./pages/Classificacoes";
+import Livros from "./pages/Livros";
 
 export default function App() {
   return (
@@ -18,6 +19,9 @@ export default function App() {
         </Route>
         <Route element={<Layout />}>
           <Route path="/classificacoes" element={<Classificacoes/>} />
+        </Route>
+        <Route element={<Layout />}>
+          <Route path="/livros" element={<Livros/>} />
         </Route>
       </Route>
 

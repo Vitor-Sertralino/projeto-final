@@ -17,6 +17,7 @@
   flex-direction: column;
   padding: 18px 14px;
   gap: 18px;
+  background-color: #c0996c;
 }
 
 .brand {
@@ -25,10 +26,15 @@
   font-weight: 700;
   background: var(--primary-weak);
   color: var(--primary);
-  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 10px 12px;
   text-align: center;
+  background-color: #8a6343;
+}
+
+.greet {
+  margin-right: 8px;
+  font-style: italic;
 }
 
 .nav {
@@ -124,19 +130,19 @@
 
 /* Botão de logout */
 .btn-logout {
-  background: var(--primary);
+  background: #522c0e;
   color: #fff;
   border: none;
   border-radius: var(--radius);
   padding: 8px 14px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: background 0.2s ease, transform 0.1s ease;
 }
 
 .btn-logout:hover {
-  background: #0b5ed7; /* tom mais escuro */
+  background: #724922; /* tom mais escuro */
 }
 
 .btn-logout:active {

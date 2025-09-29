@@ -14,7 +14,11 @@ export default function Layout() {
   return (
     <div className="app">
       <aside className="sidebar">
-        <h1 className="brand">Admin</h1>
+      <h1 className="brand">Admin</h1>
+
+      {user ? (
+          <>
+            <span className="greet">Olá, {user.nome}!</span>
 
         <nav className="nav">
           <NavLink to="/autores" className={({ isActive }) => `link ${isActive ? "active" : ""}`}>
@@ -26,11 +30,13 @@ export default function Layout() {
             Classificações
           </NavLink>
         </nav>
+        <nav className="nav">
+          <NavLink to="/livros" className={({ isActive }) => `link ${isActive ? "active" : ""}`}>
+            Livros
+          </NavLink>
+        </nav>
 
-        {user ? (
-          <>
-            <span style={{ marginRight: 8 }}>Olá, {user.nome}</span>
-            <button className="btn-logout" onClick={handleLogout}>
+        <button className="btn-logout" onClick={handleLogout}>
               Sair
             </button>
           </>
@@ -39,7 +45,7 @@ export default function Layout() {
 
       <main className="content">
         <header className="header">
-          <span>Painel Administrativo — Demo de Navegação</span>
+          <span>📚 Digi-Books — Painel Administrativo</span>
         </header>
 
         <section className="page">
@@ -47,7 +53,7 @@ export default function Layout() {
         </section>
 
         <footer className="footer">
-          © {new Date().getFullYear()} Sua Empresa
+          © {new Date().getFullYear()} DigiBooks
         </footer>
       </main>
     </div>
