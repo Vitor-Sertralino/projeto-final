@@ -14,10 +14,10 @@ export const getAutorById = async (req, res) => {
 export const createAutor = async (req, res) => {
   const { nome, nacionalidade } = req.body;
   const [result] = await pool.query(
-    'INSERT INTO autores (nome, nacionalidade) VALUES (?, ?, ?)',
+    'INSERT INTO autores (nome, nacionalidade) VALUES (?, ?)',
     [nome, nacionalidade]
   );
-  res.status(201).json({ id: result.insertId });
+  res.status(201).json({ nome, nacionalidade });
 };
 
 export const updateAutor = async (req, res) => {
